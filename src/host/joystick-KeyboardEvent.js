@@ -22,6 +22,7 @@ let buttonsDown = new Set();
 function eventToJoystickButton(event) {
   switch (event.key) {
     case "Shift":      return JOSTICK_FIRE;
+    case "Enter":      return JOSTICK_FIRE;
     case "ArrowUp":    return JOSTICK_UP;
     case "ArrowDown":  return JOSTICK_DOWN;
     case "ArrowLeft":  return JOSTICK_LEFT;

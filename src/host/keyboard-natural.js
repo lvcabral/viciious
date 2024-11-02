@@ -118,6 +118,7 @@ const eventKeyToButtonNames = {
   "ArrowDown":  ["CursorDown"],
 
   "F1":         ["F1"],
+  "MediaPlayPause": ["F1"],
   "F2":         ["F1", "LeftShift"],
   "F3":         ["F3"],
   "F4":         ["F3", "LeftShift"],

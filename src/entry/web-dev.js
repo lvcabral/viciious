@@ -41,9 +41,8 @@ c64.runloop.run();
 
 
 // To run a test program on load, uncomment the below:
-/*
+
 import { ingest } from "../host/ingest";
-import prg from "../tests/tod-prg.js";
+import prg from "../games/retaliate-prg.js";
 
 ingest(c64, ".prg", prg);
-*/
