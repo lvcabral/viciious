@@ -113,6 +113,12 @@ function onKeyDown(event) {
   // Any keypress with the Meta key (cmd/ctrl/...) down isn't for us.
   if (event.metaKey) return;
 
+  // Close Windows on Roku Back button
+  if (event.code === "Escape") {
+    console.log("Trying to close the Browser Window");
+    window.close();
+  }
+
   // Shift/Cursors may be disabled for keyboards so that they can go to the
   // joysticks only (otherwise games like Buggy Boy get stuck)
   if (!c64.keyboard.cursorsToKeys) {
