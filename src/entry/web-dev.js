@@ -39,10 +39,40 @@ const c64 = bringup({
 
 c64.runloop.run();
 
-
-// To run a test program on load, uncomment the below:
-
 import { ingest } from "../host/ingest";
-import prg from "../games/retaliatedx-prg.js";
+import retaliatedx from "../games/retaliatedx-prg.js";
+import assembloids from "../games/assembloids-prg.js";
+import c64anabalt from "../games/c64anabalt-prg.js";
 
-ingest(c64, ".prg", prg);
+
+// Running the game according to URL parameter
+const prgName = getParameterByName("prg");
+if (prgName && prgName.trim().length > 0) {
+  loadPrg(prgName);
+}
+
+function loadPrg(prg) {
+  console.log("loading ", prg);
+  switch (prg) {
+    case "retaliatedx":
+      ingest(c64, `${prg}.prg`, retaliatedx);
+      break;
+    case "assembloids":
+      ingest(c64, `${prg}.prg`, assembloids);
+      break;
+    case "c64anabalt":
+      ingest(c64, `${prg}.prg`, c64anabalt);
+      break;
+    default:
+      break;
+  }
+}
+
+function getParameterByName(name, url = window.location.href) {
+  name = name.replace(/[\[\]]/g, "\\$&");
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return "";
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
