@@ -91,6 +91,9 @@ const eventKeyToButtonNames = {
   ")":          ["Num9", "LeftShift"],
 
   " ":          ["Space"],
+  "InstantReplay": ["Space"],
+  "MediaFastForward": ["Space"],
+  "MediaRewind": ["InstDel"],
   "Backspace":  ["InstDel"],
   "Enter":      ["Return"],
   "Escape":     ["RunStop"],
